@@ -1,25 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes,Route } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import HomePage from './Pages/HomePage';
+import AboutPage from './Pages/AboutPage';
+import Policiy from './Pages/Policiy';
+import ContactUs from './Pages/ContactUs';
+import Services from './Pages/Services';
+import WildPage from './Pages/WildPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/home' element={<HomePage/>}/>
+        <Route path='/about' element={<AboutPage/>}/>
+        <Route path='/contact' element={<ContactUs/>}/>
+        <Route path='/policy' element={<Policiy/>}/>
+        <Route path='/services' element={<Services/>}/>
+        <Route path='/*' element={<WildPage/>}/>
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
